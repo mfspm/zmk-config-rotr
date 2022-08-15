@@ -32,12 +32,12 @@
 
 		default_layer {
 			// RED: BACK | REFRESH | MUTE MIC (SCROLL PAGE)
-			bindings = <&kp C_AC_BACK &lt 1 C_AC_REFRESH &kp MUTE_DISCORD_MIC>;
+			bindings = <&kp C_AC_BACK &lt 1 C_AC_REFRESH &kp &MUTE_DISCORD_MIC>;
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 		};
 		one {
 			// YELLOW: NEXT | PLAY/PAUSE | MUTE MIC (VOLUME)
-			bindings = <&kp C_NEXT &lt 1 C_PP &kp MUTE_DISCORD_MIC>;
+			bindings = <&kp C_NEXT &lt 1 C_PP &kp &MUTE_DISCORD_MIC>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		shift {
