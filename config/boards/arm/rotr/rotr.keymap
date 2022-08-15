@@ -4,10 +4,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 &inc_dec_kp {
-	triggers-per-rotation = <16>;
+	triggers-per-rotation = <8>;
 };
 &def_lshft {
-	triggers-per-rotation = <16>;
+	triggers-per-rotation = <8>;
 };
 
 / {
@@ -18,9 +18,21 @@
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LCTRL>
-			, <&macro_press &kp RBKT>
+			, <&macro_tap &kp RBKT>
 			, <&macro_release &kp LCTRL>
-			, <&macro_release &kp RBKT>
+			;
+		};
+		
+		SNIP_TOOL: win_snip_tool {
+		label = "windows_snip_tool";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LWIN>
+			, <&macro_press &kp LSHIFT>
+			, <&macro_tap &kp S>
+			, <&macro_release &kp LWIN>
+			, <&macro_release &kp LSHIFT>
 			;
 		};
 	};
@@ -31,13 +43,13 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-			// RED: BACK | REFRESH | MUTE MIC (SCROLL PAGE)
-			bindings = <&kp C_AC_BACK &lt 1 C_AC_REFRESH &kp &MUTE_DISCORD_MIC>;
+			// RED: SNIP | F5 | MUTE MIC (SCROLL PAGE)
+			bindings = <&SNIP_TOOL &lt 2 F5 &MUTE_DISCORD_MIC>;
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 		};
 		one {
 			// YELLOW: NEXT | PLAY/PAUSE | MUTE MIC (VOLUME)
-			bindings = <&kp C_NEXT &lt 1 C_PP &kp &MUTE_DISCORD_MIC>;
+			bindings = <&kp C_NEXT &lt 2 C_PP &MUTE_DISCORD_MIC>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		shift {
