@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &inc_dec_kp {
-	triggers-per-rotation = <32>;
+	triggers-per-rotation = <16>;
 };
 &def_lshft {
 	triggers-per-rotation = <4>;
@@ -44,12 +44,12 @@
 
 		default_layer {
 			// RED: SNIP | F5 | MUTE MIC (SCROLL PAGE)
-			bindings = <&SNIP_TOOL &lt 1 F5 &MUTE_DISCORD_MIC>;
+			bindings = <&SNIP_TOOL &lt 2 F5 &MUTE_DISCORD_MIC>;
 			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
 		};
 		one {
 			// YELLOW: NEXT | PLAY/PAUSE | MUTE MIC (VOLUME)
-			bindings = <&kp C_NEXT &lt 1 C_PP &MUTE_DISCORD_MIC>;
+			bindings = <&kp C_NEXT &lt 2 C_PP &MUTE_DISCORD_MIC>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		shift {
